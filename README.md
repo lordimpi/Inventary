@@ -1,2 +1,2 @@
-# Inventary
-Inventary Application
+# Inventory
+Inventory Application
