@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory", "Inventory\Inve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{B09A6C6B-4846-4DB6-9D65-69606E168FD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{FC641A7C-2CD0-440B-A0CC-2807DF157539}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B09A6C6B-4846-4DB6-9D65-69606E168FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B09A6C6B-4846-4DB6-9D65-69606E168FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B09A6C6B-4846-4DB6-9D65-69606E168FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC641A7C-2CD0-440B-A0CC-2807DF157539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC641A7C-2CD0-440B-A0CC-2807DF157539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC641A7C-2CD0-440B-A0CC-2807DF157539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC641A7C-2CD0-440B-A0CC-2807DF157539}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
