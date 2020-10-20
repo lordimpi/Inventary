@@ -33,6 +33,38 @@ namespace DataAccess.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = "ASH",
+                            CategoryName = "Aseo Hogar"
+                        },
+                        new
+                        {
+                            CategoryId = "ASP",
+                            CategoryName = "Aseo Personal"
+                        },
+                        new
+                        {
+                            CategoryId = "HGR",
+                            CategoryName = "Hogar"
+                        },
+                        new
+                        {
+                            CategoryId = "PRF",
+                            CategoryName = "Perfumería"
+                        },
+                        new
+                        {
+                            CategoryId = "SLD",
+                            CategoryName = "Salud"
+                        },
+                        new
+                        {
+                            CategoryId = "VDJ",
+                            CategoryName = "Video Juegos"
+                        });
                 });
 
             modelBuilder.Entity("Entities.InputOutputEntity", b =>
@@ -63,8 +95,8 @@ namespace DataAccess.Migrations
             modelBuilder.Entity("Entities.ProductEntity", b =>
                 {
                     b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("CategoryId")
                         .HasColumnType("nvarchar(50)");
@@ -86,6 +118,24 @@ namespace DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = "ASJ-98745",
+                            CategoryId = "PRF",
+                            ProductDescription = "",
+                            ProductName = "Crema para manos marca Tersa",
+                            TotalQuantity = 0
+                        },
+                        new
+                        {
+                            ProductId = "RPT-5465879",
+                            CategoryId = "SLD",
+                            ProductDescription = "",
+                            ProductName = "Pastillas para la garganta LESUS",
+                            TotalQuantity = 0
+                        });
                 });
 
             modelBuilder.Entity("Entities.StorageEntity", b =>
@@ -101,7 +151,7 @@ namespace DataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("WarehouseId")
                         .HasColumnType("nvarchar(50)");
@@ -134,6 +184,20 @@ namespace DataAccess.Migrations
                     b.HasKey("WarehouseId");
 
                     b.ToTable("Warehouses");
+
+                    b.HasData(
+                        new
+                        {
+                            WarehouseId = "7c3e1d88-d768-41b0-8b9d-7f05463d7308",
+                            WarehouseAddress = "Calle 8 con 23",
+                            WarehouseName = "Bodega Central"
+                        },
+                        new
+                        {
+                            WarehouseId = "cfce755b-7bcd-489b-8ed6-9a7e647d03c1",
+                            WarehouseAddress = "Calle norte con occidente",
+                            WarehouseName = "Bodega Norte"
+                        });
                 });
 
             modelBuilder.Entity("Entities.InputOutputEntity", b =>

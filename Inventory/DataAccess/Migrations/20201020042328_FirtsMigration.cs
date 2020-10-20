@@ -36,7 +36,7 @@ namespace DataAccess.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    ProductId = table.Column<string>(maxLength: 10, nullable: false),
+                    ProductId = table.Column<string>(maxLength: 50, nullable: false),
                     ProductName = table.Column<string>(maxLength: 100, nullable: false),
                     ProductDescription = table.Column<string>(maxLength: 600, nullable: true),
                     TotalQuantity = table.Column<int>(nullable: false),
@@ -100,6 +100,38 @@ namespace DataAccess.Migrations
                         principalColumn: "StorageId",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "CategoryId", "CategoryName" },
+                values: new object[,]
+                {
+                    { "ASH", "Aseo Hogar" },
+                    { "ASP", "Aseo Personal" },
+                    { "HGR", "Hogar" },
+                    { "PRF", "Perfumería" },
+                    { "SLD", "Salud" },
+                    { "VDJ", "Video Juegos" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Warehouses",
+                columns: new[] { "WarehouseId", "WarehouseAddress", "WarehouseName" },
+                values: new object[,]
+                {
+                    { "7c3e1d88-d768-41b0-8b9d-7f05463d7308", "Calle 8 con 23", "Bodega Central" },
+                    { "cfce755b-7bcd-489b-8ed6-9a7e647d03c1", "Calle norte con occidente", "Bodega Norte" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "ProductId", "CategoryId", "ProductDescription", "ProductName", "TotalQuantity" },
+                values: new object[] { "ASJ-98745", "PRF", "", "Crema para manos marca Tersa", 0 });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "ProductId", "CategoryId", "ProductDescription", "ProductName", "TotalQuantity" },
+                values: new object[] { "RPT-5465879", "SLD", "", "Pastillas para la garganta LESUS", 0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_InOuts_StorageId",
