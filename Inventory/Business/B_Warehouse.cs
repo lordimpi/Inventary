@@ -9,26 +9,26 @@ namespace Business
 {
     public class B_Warehouse : ICRUDData<WarehouseEntity>
     {
-        public bool CreateItem(WarehouseEntity item)
+        public bool Create(WarehouseEntity item)
         {
             using var db = new InventoryContext();
             db.Warehouses.Add(item);
             return db.SaveChanges() > 0;
         }
 
-        public List<WarehouseEntity> ItemList()
+        public List<WarehouseEntity> List()
         {
             using var db = new InventoryContext();
             return db.Warehouses.ToList();
         }
 
-        public bool UpdateItem(WarehouseEntity item)
+        public bool Update(WarehouseEntity item)
         {
             using var db = new InventoryContext();
             db.Warehouses.Update(item);
             return db.SaveChanges() > 0;
         }
-        public bool DeleteItem(WarehouseEntity item)
+        public bool Delete(WarehouseEntity item)
         {
             throw new NotImplementedException();
         }

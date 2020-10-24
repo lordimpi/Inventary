@@ -1,25 +1,3 @@
 ﻿@page "/"
 
-<input type="text" @bind-value="@message" />
-<input type="text" @bind-value="@Cadena" />
-<input type="button" value="Presionar" @onclick="ChangeText" />
-<div>
-    @Message
-</div>
-@code{
-    [Parameter]
-    public string Message { get; set; }
-
-    string message = "Un contenido";
-    string Cadena;
-
-    protected override async Task OnInitializedAsync()
-    {
-        message = Message;
-    }
-
-    private void ChangeText()
-    {
-        Message = Cadena;
-    }
-}
+<CreateProductComponent/>

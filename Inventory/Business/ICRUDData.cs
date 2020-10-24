@@ -6,9 +6,9 @@ namespace Business
 {
     public interface ICRUDData<T>
     {
-        List<T> ItemList();
-        bool CreateItem(T item);
-        bool UpdateItem(T item);
-        bool DeleteItem(T item);
+        List<T> List();
+        bool Create(T item);
+        bool Update(T item);
+        bool Delete(T item);
     }
 }

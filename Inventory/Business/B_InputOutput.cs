@@ -10,25 +10,25 @@ namespace Business
 {
     public class B_InputOutput : ICRUDData<InputOutputEntity>
     {
-        public bool CreateItem(InputOutputEntity item)
+        public bool Create(InputOutputEntity item)
         {
             using var db = new InventoryContext();
             db.InOuts.Add(item);
             return db.SaveChanges() > 0;
         }
-        public List<InputOutputEntity> ItemList()
+        public List<InputOutputEntity> List()
         {
             using var db = new InventoryContext();
             return db.InOuts.ToList();
         }
 
-        public bool UpdateItem(InputOutputEntity item)
+        public bool Update(InputOutputEntity item)
         {
             using var db = new InventoryContext();
             db.InOuts.Update(item);
             return db.SaveChanges() > 0;
         }
-        public bool DeleteItem(InputOutputEntity item)
+        public bool Delete(InputOutputEntity item)
         {
             throw new NotImplementedException();
         }

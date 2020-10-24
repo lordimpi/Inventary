@@ -9,26 +9,26 @@ namespace Business
 {
     public class B_Storage : ICRUDData<StorageEntity>
     {
-        public bool CreateItem(StorageEntity item)
+        public bool Create(StorageEntity item)
         {
             using var db = new InventoryContext();
             db.Storages.Add(item);
             return db.SaveChanges() > 0;
         }
 
-        public List<StorageEntity> ItemList()
+        public List<StorageEntity> List()
         {
             using var db = new InventoryContext();
             return db.Storages.ToList();
         }
 
-        public bool UpdateItem(StorageEntity item)
+        public bool Update(StorageEntity item)
         {
             using var db = new InventoryContext();
             db.Storages.Update(item);
             return db.SaveChanges() > 0;
         }
-        public bool DeleteItem(StorageEntity item)
+        public bool Delete(StorageEntity item)
         {
             throw new NotImplementedException();
         }
