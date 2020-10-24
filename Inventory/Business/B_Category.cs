@@ -11,38 +11,20 @@ namespace Business
     {
         public List<CategoryEntity> ItemList()
         {
-            using (var db = new InventoryContext())
-            {
-                return db.Categories.ToList();
-            }
+            using var db = new InventoryContext();
+            return db.Categories.ToList();
         }
         public bool CreateItem(CategoryEntity item)
         {
-            using (var db = new InventoryContext())
-            {
-                CategoryEntity categoryEntity = db.Categories.Find(item.CategoryId);
-                if (categoryEntity != null)
-                {
-                    db.Categories.Add(categoryEntity);
-                    db.SaveChanges();
-                    return true;
-                }
-                return false;
-            }
+            using var db = new InventoryContext();
+            db.Categories.Add(item);
+            return db.SaveChanges() > 0;
         }
         public bool UpdateItem(CategoryEntity item)
         {
-            using (var db = new InventoryContext())
-            {
-                CategoryEntity categoryEntity = db.Categories.Find(item.CategoryId);
-                if (categoryEntity != null)
-                {
-                    db.Categories.Update(categoryEntity);
-                    db.SaveChanges();
-                    return true;
-                }
-                return false;
-            }
+            using var db = new InventoryContext();
+            db.Categories.Update(item);
+            return db.SaveChanges() > 0;
         }
         public bool DeleteItem(CategoryEntity item)
         {
