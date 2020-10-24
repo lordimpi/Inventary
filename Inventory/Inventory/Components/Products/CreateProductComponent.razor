@@ -1,0 +1,28 @@
+﻿@using Entities
+@inject B_Product b_product
+<div>
+    <EditForm Model="product">
+        <div class="form-control">
+            <label>Referencia:</label>
+            <InputText @bind-Value="product.ProductId" class="form-control" />
+        </div>
+        <div class="form-control">
+            <label>Nombre producto:</label>
+            <InputText @bind-Value="product.ProductName" class="form-control" />
+        </div>
+        <div class="form-control">
+            <label>Descripcion:</label>
+            <InputTextArea @bind-Value="product.ProductDescription" class="form-control" />
+        </div>
+        <input type="button" value="Agregar" @onclick="SaveProduct" />
+    </EditForm>
+</div>
+
+@code {
+    ProductEntity product = new ProductEntity();
+
+    private void SaveProduct()
+    {
+        b_product.CreateItem(product);
+    }
+}
