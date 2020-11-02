@@ -32,5 +32,10 @@ namespace Business
         {
             throw new NotImplementedException();
         }
+
+        public InputOutputEntity FindById(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

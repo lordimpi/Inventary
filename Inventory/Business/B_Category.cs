@@ -30,5 +30,10 @@ namespace Business
         {
             throw new NotImplementedException();
         }
+
+        public CategoryEntity FindById(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

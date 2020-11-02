@@ -32,5 +32,10 @@ namespace Business
         {
             throw new NotImplementedException();
         }
+
+        public WarehouseEntity FindById(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

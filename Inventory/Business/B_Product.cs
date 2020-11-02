@@ -30,5 +30,11 @@ namespace Business
         {
             throw new NotImplementedException();
         }
+
+        public ProductEntity FindById(string id)
+        {
+            using var db = new InventoryContext();
+            return db.Products.ToList().LastOrDefault(p => p.ProductId == id);
+        }
     }
 }
